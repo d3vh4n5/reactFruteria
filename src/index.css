@@ -20,6 +20,8 @@ code {
   padding: 10px 0;
   border-radius: 5px;
   border: 1px solid orangered;
+  color: whitesmoke;
+  text-shadow: 1px 1px rgba(255, 68, 0, 0.507);
   background-color: rgba(255, 166, 0, 0.2);
   width: 300px;
 }

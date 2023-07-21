@@ -13,6 +13,17 @@ import CustomButton from './components/CustomButton'
 import MyComponent from './components/MyComponent';
 import BotonStyled from './components/BotonStyled';
 import BotonStyled2 from './components/BotonStyled2';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import ProductDetails from './components/ProductDetails';
+import Fetching from './components/Fetching';
+
+
+const Home = ()=>{
+  return <h1>Pagina principal</h1>
+}
+const About = ()=>{
+  return <h1>Acerca de nosotros</h1>
+}
 
 function App() {
 
@@ -21,6 +32,23 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to='/' >Inicio</NavLink>
+            </li>
+            <li>
+              <NavLink to='/about' >Nosotros</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path={'/'} exact Component={Home}></Route>
+          <Route path='/about' Component={About}></Route>
+          <Route path='/products/:id' Component={ProductDetails}></Route>
+        </Routes>
+      </BrowserRouter>
       <main>
         <p>
           Hacer el boton de cerrar sesión solamente si el usuario esta logeado, para que sea más fácil 
@@ -65,9 +93,13 @@ function App() {
           <BotonStyled2></BotonStyled2>
           <br />
           <br />
+          <Fetching></Fetching>
+          <br />
+          <br />
       </main>
       <Footer></Footer>
     </div>
+    
   );
 }
 
