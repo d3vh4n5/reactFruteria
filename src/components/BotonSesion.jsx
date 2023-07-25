@@ -1,11 +1,55 @@
-import React from "react"
+import React, {useState} from "react";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+
 
 function BotonSesion(props){
-    const estaLogueado = props.estaLogueado;
+    const [estaLogueado, setEstaLogueado] = useState(props.estaLogueado);
+    const clickHandler = ()=>{
+        setEstaLogueado(!estaLogueado)
+    }
+    
+    const StyledButton = styled.button`
+        background-color: ${estaLogueado ? 'rgba(0, 200, 0, .5)' : 'blue'};
+        color: ${estaLogueado ? 'white' : 'white'};
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+
+        &:hover {
+            background-color: ${props=> estaLogueado ? 'orange' : 'lightblue'};
+            color: black;
+        }
+    `
+    const [isHighlighted, setIsHighlighted] = useState(false)
+    const estilosCarrito = {
+        padding: '5px 20px',
+        borderRadius: '10px',
+        backgroundColor: isHighlighted ? 'lightgreen' : 'rgba(0, 200, 0, .5)',
+    }
+
+    const HoverCarritoOn = ()=> {
+        setIsHighlighted(true);
+    }
+    const HoverCarritoOff = ()=>{
+        setIsHighlighted(false);
+    }
+
     return (
-        <button onClick={props.clickHandler}>
-            { estaLogueado ? 'Cerrar sesión' : 'Iniciar sesión'}
-        </button>
+        <div>
+            <StyledButton onClick={()=>setEstaLogueado(!estaLogueado)}>
+                { estaLogueado ? 'Cerrar sesión' : 'Iniciar sesión'}
+            </StyledButton>
+            {estaLogueado && <NavLink 
+                to='/carrito' 
+                style={estilosCarrito} 
+                onMouseOver={HoverCarritoOn}
+                onMouseOut={HoverCarritoOff}
+            >🛒</NavLink>}
+        </div>
     )
 }
 
