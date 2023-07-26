@@ -1,9 +1,23 @@
-import React from 'react'
+import React from 'react';
+import Advertencia from './Advertencia';
+import Fetching from './Fetching';
+
+const style = {
+    minHeight: '77%',
+}
+
 
 const Home = ()=>{
 
     return(
-        <h1>Pagina principal</h1>
+        <div style={style}>
+            <Advertencia 
+                warn={true}
+                mensaje={'🚧🏗️ Página en desarrollo.. 🛠️⚙️'}
+            ></Advertencia>
+            
+            <Fetching></Fetching>
+        </div>
     )
 }
 

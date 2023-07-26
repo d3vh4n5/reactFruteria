@@ -1,11 +1,8 @@
 import './App.css';
 import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
-import Contador from './components/Contador';
-import Advertencia from './components/Advertencia';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProductDetails from './components/ProductDetails';
-import Fetching from './components/Fetching';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -28,15 +25,7 @@ function App() {
       <main>
         
           <br />
-          <Advertencia warn = {true}></Advertencia>
-          <br />
           
-          
-          <br />
-          <br />
-          {/* <Fetching></Fetching> */}
-          <br />
-          <br />
       </main>
       <Footer></Footer>
     </div>

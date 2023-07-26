@@ -9,7 +9,10 @@ function Advertencia(props) {
         <div className="warning">
             <h2>⚠️</h2>
             <p>
-             Advertencia!
+                ¡Advertencia!
+            </p>
+            <p>
+                {props.mensaje}
             </p>
         </div>
     )
