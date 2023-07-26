@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import Advertencia from './Advertencia';
 
+const carritoFrutas = JSON.parse(localStorage.getItem('carritoFtrutas')) || [] // Mayus change
+
 const Fetching = () => {
     const [data, setData] = useState([]);
-    
     const [warn, setWarn] = useState(true)
 
     useEffect(()=>{
@@ -29,7 +30,11 @@ const Fetching = () => {
           mensaje={'Hubo un error al cargar los productos.. 🛜 🌎🚫'}
       ></Advertencia>
         {data.map(producto=> (
-            <Card imagen={producto.imagen} nombre={producto.nombre} precio={producto.precio} key={producto.id}></Card>
+            <Card 
+              producto={producto} 
+              carritoFrutas={carritoFrutas}
+              key={producto.id} 
+            ></Card>
         ))}
     </div>
   )

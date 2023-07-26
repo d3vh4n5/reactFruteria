@@ -1,14 +1,27 @@
 import React from 'react'
 
 const Card = (props) => {
+  const {id, imagen, nombre, precio} = props.producto
+
+  function agregarProducto(){
+      props.carritoFrutas.push(props.producto);
+      localStorage.setItem('carritoFrutas', JSON.stringify(props.carritoFrutas)) // Mayus change
+      console.log('Producto agregado al carrito: ', nombre)
+      console.table(props.carritoFrutas)
+  }
 
   return (
         <div className="card">
-            <div className="card-image">{props.imagen}</div>
-            <div className="card-name">{props.nombre}</div>
-            <div className="card-price">$ {props.precio}</div>
+            <div className="card-image">{imagen}</div>
+            <div className="card-name">{nombre}</div>
+            <div className="card-price">$ {precio}</div>
             <div className="card-button">
-                <button className="button button-outline button-add" id={props.id} title="Clic para agregar al carrito">+</button>
+                <button 
+                  id={id}
+                  className="button button-outline button-add" 
+                  title="Clic para agregar al carrito"
+                  onClick={agregarProducto}
+                >+</button>
             </div>
         </div>
   )

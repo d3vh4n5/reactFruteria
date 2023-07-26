@@ -36,7 +36,7 @@ code {
   border-radius: 5px;
   border: 1px solid orangered;
   color: whitesmoke;
-  text-shadow: 1px 1px rgba(255, 68, 0, 0.507);
+  text-shadow: 1px 1px rgba(88, 24, 0, 0.507);
   background-color: rgba(255, 166, 0, 0.2);
   width: 300px;
   text-align: center;
@@ -152,11 +152,17 @@ main{
 .card {
   background: rgba(240, 248, 255, 0.8);
   backdrop-filter: blur(10px);
+  padding-bottom: 10px;
   box-shadow: 0px 10px 15px  5px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(211, 211, 211, 0.384);
   border-radius: 8px;
   height: 230px;
   width: 180px;
+  color: #5e5c5c;
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .card:hover {
@@ -194,7 +200,11 @@ main{
 
 .button-add {
   border-radius: 10px;
-  outline: 1px solid blueviolet ;
+  border: 1px solid blueviolet ;
+  padding: .5rem 1.8rem;
+  font-family: 'Roboto';
+  font-weight: bold;
+  color: blueviolet
 }
 
 .card .card-button button {
