@@ -1,8 +1,14 @@
 import React from 'react'
 import frutas from "../img/icon-fruits-64.png";
+import TableRow from './TableRow';
 
+const carritoFrutas = JSON.parse(localStorage.getItem('carritoFrutas')) || [] // Mayus change
+console.log(carritoFrutas)
 const Carrito = () => {
 
+    const keyGenerator = ()=>{
+        return parseInt(Math.random() * 10_000)
+    }
   
 
   return (
@@ -20,18 +26,19 @@ const Carrito = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Aquí</td>
-                        <td>verás</td>
-                        <td>productos</td>
-                        <td></td>
-                    </tr>
+                    {carritoFrutas.map(producto=>(
+                        <TableRow producto={producto} key={keyGenerator()} />
+                        // Condicional de que si producto esta vacio aparezca una
+                        // fila con colspan=4 que diga que no hay productos
+                    ))}
                 </tbody>
+                <tfoot className="centrar-div">
+                    <td colspan="4">
+                    <button className="button" id="btnComprar">COMPRAR</button>
+                    </td>
+                </tfoot>
             </table>
         </section>
-        <div class="centrar-div">
-            <button class="button" id="btnComprar">COMPRAR</button>
-        </div>
     </div>
   )
 }

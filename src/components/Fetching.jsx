@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import Advertencia from './Advertencia';
 
-const carritoFrutas = JSON.parse(localStorage.getItem('carritoFtrutas')) || [] // Mayus change
+const url = '/fakebackend/productos.json'
+// const url = 'https://miniapis.onrender.com/verduleria/api/verduras/'
+const carritoFrutas = JSON.parse(localStorage.getItem('carritoFrutas')) || [] // Mayus change
 
 const Fetching = () => {
     const [data, setData] = useState([]);
     const [warn, setWarn] = useState(true)
 
     useEffect(()=>{
-        fetch('/fakebackend/productos.json')
-        // fetch('https://miniapis.onrender.com/verduleria/api/verduras/')
+        fetch(url)
             .then(response=>response.json())
             .then(data=> {
               setData(data)
