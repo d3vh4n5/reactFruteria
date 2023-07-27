@@ -13,11 +13,13 @@ function BotonSesion(props){
     const StyledButton = styled.button`
         background-color: ${estaLogueado ? 'rgba(0, 200, 0, .5)' : 'blue'};
         color: ${estaLogueado ? 'white' : 'white'};
-        padding: 10px 20px;
+        padding: 0 20px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         margin: 0 10px;
+        font-size: 1rem;
+        font-family: 'Roboto';
 
         &:hover {
             background-color: ${props=> estaLogueado ? 'orange' : 'lightblue'};

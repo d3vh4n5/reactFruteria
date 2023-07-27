@@ -5,7 +5,7 @@ const About = () => {
     // Estilos en línea:
     const estilos = {
         margin: '50px auto',
-        padding: '2rem',
+        padding: '1.2rem',
         borderRadius: '10px',
         background: 'rgba(220, 220, 220, .7)',
         maxWidth: '1200px'
