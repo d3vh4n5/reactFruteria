@@ -7,9 +7,22 @@ import ProductDetails from './components/ProductDetails';
 import Home from './components/Home';
 import About from './components/About';
 import Carrito from './components/Carrito';
+import ocultarMenu from './ocultarMenu'
 
+
+// const botones = document.querySelectorAll('.btnMenu')
+//       const check = document.querySelector('#check')
+
+//       console.log(botones);
+
+//       botones.forEach(boton=>{
+//         boton.addEventListener('click', ()=>{
+//           check.checked = false
+//         })
+//       })
 function App() {
-
+  
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -30,7 +43,13 @@ function App() {
       <Footer></Footer>
     </div>
     
-  );
-}
+    );
+  }
+  
+  setInterval(()=>{
+    ocultarMenu()
+  }, 1000)
 
-export default App;
+
+  export default App;
+  

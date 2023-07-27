@@ -12,16 +12,21 @@ const Header = ()=>{
                 <h1>Frutería Lunaranja</h1>
                 <img src={luna} className="logo" alt="logo" />
             </div>
+            <input type="checkbox" name="" id="check"  />
+            <label htmlFor="check" className="mostrar-menu">&#9776;</label>
             <nav>
                 <ul>
                     <li>
-                    <NavLink to='/' >Inicio</NavLink>
+                    <NavLink to='/' className={'btnMenu'}>Inicio</NavLink>
                     </li>
                     <li>
-                    <NavLink to='/about' >About</NavLink>
+                    <NavLink to='/about' className={'btnMenu'}>About</NavLink>
                     </li>
                 </ul>
                 <BotonSesion estaLogueado = {true}></BotonSesion>
+                <label htmlFor="check"  className="esconder-menu">
+                    X
+                </label>
             </nav>
         </header>
     )

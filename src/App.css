@@ -113,6 +113,19 @@ li a{
   font-weight: bolder;
 }
 
+/* Checks y labels para responsive*/
+
+#check{
+  display: none;
+}
+
+.mostrar-menu, .esconder-menu{
+  font-size: 2rem;
+  display: none;
+}
+
+/* fin Checks y labels para responsive*/
+
 #spinner{
   width: 50px;
 }
@@ -375,6 +388,56 @@ footer{
 }
 
 @media screen and (width <= 767px) {
+  .mostrar-menu, .esconder-menu{
+    font-size: 2rem;
+    display: block;
+  }
+
+  nav{
+    position: fixed;
+    background: linear-gradient(to bottom,rgb(34, 34, 34)5%, rgba(34, 34, 34, 0.95)50%,rgba(34, 34, 34, 0.6) 90%, transparent 100%);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    transition: 0.8s;
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+  nav ul li,.btnUsuario{
+    margin: 1.4rem auto;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .btnUsuario{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.4rem;
+  }
+
+  .btnSesion{
+    margin-bottom: 1.4rem!important;
+  }
+  #check:checked ~ nav{
+    position:fixed;
+    right: 0;
+  }
+  .esconder-menu{
+    position: absolute;
+    top: 2%;
+    right: 4%;
+  }
+
   .form-checkout {
       padding: 10px;
       width: 100%;

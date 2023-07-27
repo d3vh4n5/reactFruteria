@@ -41,11 +41,12 @@ function BotonSesion(props){
     }
 
     return (
-        <div>
-            <StyledButton onClick={()=>setEstaLogueado(!estaLogueado)}>
+        <div className="btnUsuario">
+            <StyledButton  className='btnSesion btnMenu' onClick={()=>setEstaLogueado(!estaLogueado)}>
                 { estaLogueado ? 'Cerrar sesión' : 'Iniciar sesión'}
             </StyledButton>
             {estaLogueado && <NavLink 
+                className={'btnMenu'}
                 to='/carrito' 
                 style={estilosCarrito} 
                 onMouseOver={HoverCarritoOn}
