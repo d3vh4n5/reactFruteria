@@ -6,7 +6,7 @@ const Card = (props) => {
   function agregarProducto(){
       props.carritoFrutas.push(props.producto);
       localStorage.setItem('carritoFrutas', JSON.stringify(props.carritoFrutas)) // Mayus change
-      console.log('Producto agregado al carrito: ', nombre)
+      // console.log('Producto agregado al carrito: ', nombre)
       console.table(props.carritoFrutas)
   }
 

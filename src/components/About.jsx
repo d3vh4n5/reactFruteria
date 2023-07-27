@@ -64,7 +64,7 @@ const About = () => {
             <li>Miligram (libraría front al estilo Bootstrap)</li>
         </ul>
         <hr />
-        <p>Gracias por visitar mi proyecto, ¡espero que te haya resultado de interés!</p>
+        <p>Gracias por visitar mi proyecto, ¡Espero que te haya resultado de interés!</p>
     </div>
   )
 }

@@ -25,6 +25,10 @@ body {
   max-height: fit-content;
 }
 
+section{
+  min-height: 67vh;
+}
+
 code {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 600;
