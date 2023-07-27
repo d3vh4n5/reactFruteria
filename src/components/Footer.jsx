@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer>
         <p>
-            App desarrollada en React por Juan Basgall.
+            App desarrollada en React por <a href="https://d3vh4n5.com.ar/" target='_blank'>Juan Basgall</a>.
         </p>
         <img src={logo} className="App-logo" alt="logo" />
     </footer>

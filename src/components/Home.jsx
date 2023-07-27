@@ -11,10 +11,10 @@ const Home = ()=>{
 
     return(
         <div style={style}>
-            <Advertencia 
+            {/* <Advertencia 
                 warn={true}
                 mensaje={'🚧🏗️ Página en desarrollo.. 🛠️⚙️'}
-            ></Advertencia>
+            ></Advertencia> */}
             
             <Fetching></Fetching>
         </div>

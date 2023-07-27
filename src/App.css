@@ -26,8 +26,15 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  color: green;
+  background: #5e5c5c3f;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+code, a{
+  margin: 0 5px;
 }
 
 .warning{
@@ -62,7 +69,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  color: lightseagreen;
 }
 
 .App-header div{
@@ -85,7 +92,7 @@ nav li{
 }
 li a{
   text-decoration: none;
-  color: white;
+  color: lightseagreen;
 
   &:hover{
     color: Tomato;
@@ -136,7 +143,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
-p, span, strong, code {
+p, span, strong {
   font-size: larger;
 }
 
@@ -218,7 +225,7 @@ main{
   padding: .5rem 1.8rem;
   font-family: 'Roboto';
   font-weight: bold;
-  color: blueviolet
+  color: white;
 }
 
 .card .card-button button {
@@ -291,6 +298,13 @@ main{
   margin: 0 auto;
   padding: 20px;
   width: 80%;
+}
+
+.canastaDeFrutas{
+  margin: 30px;
+  position: relative;
+  left: 50%;
+  transform: translate(-100%);
 }
 
 table{
