@@ -1,9 +1,11 @@
 import React from 'react'
+import store from '../store';
 
 const Card = (props) => {
   const {id, imagen, nombre, precio} = props.producto
 
   function agregarProducto(){
+      store.addProduct(props.producto)
       props.carritoFrutas.push(props.producto);
       localStorage.setItem('carritoFrutas', JSON.stringify(props.carritoFrutas)) // Mayus change
       // console.log('Producto agregado al carrito: ', nombre)

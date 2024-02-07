@@ -62,6 +62,7 @@ const About = () => {
             <li>React-router-dom</li>
             <li>Styled Components</li>
             <li>Miligram (libraría front al estilo Bootstrap)</li>
+            <li>Mobx y mobx-react (Herramientas para manejar el estado)</li>
         </ul>
         <hr />
         <p>Gracias por visitar mi proyecto, ¡Espero que te haya resultado de interés!</p>

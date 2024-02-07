@@ -1,13 +1,14 @@
-import React, {useState} from 'react'
+import store from "../store"
 
 const TableRow = (props) => {
     const {imagen, nombre, precio, id} = props.producto
     const carritoFrutas = JSON.parse(localStorage.getItem('carritoFrutas')) || []
 
     const eliminarProducto = (id)=>{
-        let frutaIndex = carritoFrutas.findIndex( producto => producto.id == id)
+        let frutaIndex = carritoFrutas.findIndex( producto => producto.id === id)
         console.log(carritoFrutas)
         carritoFrutas.splice(frutaIndex, 1)
+        store.deleteProduct(frutaIndex)
         console.log(carritoFrutas)
         console.log('Eliminando producto: ', id)
         localStorage.setItem('carritoFrutas', JSON.stringify(carritoFrutas))

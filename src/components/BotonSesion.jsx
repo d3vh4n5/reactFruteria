@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import store from "../store";
+import { observer } from "mobx-react";
 
 
 
-function BotonSesion(props){
+const BotonSesion = observer((props)=>{
     const [estaLogueado, setEstaLogueado] = useState(props.estaLogueado);
-    const clickHandler = ()=>{
-        setEstaLogueado(!estaLogueado)
-    }
+    
     
     const StyledButton = styled.button`
         background-color: ${estaLogueado ? 'rgba(0, 200, 0, .5)' : 'blue'};
@@ -45,15 +45,16 @@ function BotonSesion(props){
             <StyledButton  className='btnSesion btnMenu' onClick={()=>setEstaLogueado(!estaLogueado)}>
                 { estaLogueado ? 'Cerrar sesión' : 'Iniciar sesión'}
             </StyledButton>
-            {estaLogueado && <NavLink 
-                className={'btnMenu'}
+            {estaLogueado && <NavLink
+                title='ir al carrito' 
+                className={''}
                 to='/carrito' 
                 style={estilosCarrito} 
                 onMouseOver={HoverCarritoOn}
                 onMouseOut={HoverCarritoOff}
-            >🛒</NavLink>}
+            >{store.numberOfProducts} 🛒</NavLink>}
         </div>
     )
-}
+})
 
 export default BotonSesion
